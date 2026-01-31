@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=4 uid="uid://wdmusfh8lgs5"]
 
-[ext_resource type="PackedScene" uid="uid://g08seisd8imf" path="res://player.tscn" id="1_u52ul"]
-[ext_resource type="Texture2D" uid="uid://c71d1t04aulbx" path="res://2026_01_31_0n1_Kleki.png" id="1_vonw3"]
-[ext_resource type="Script" uid="uid://dg0jxavxgfpmc" path="res://line_2d.gd" id="3_oi3di"]
+[ext_resource type="PackedScene" uid="uid://g08seisd8imf" path="res://entities/player/player.tscn" id="1_u52ul"]
+[ext_resource type="Texture2D" uid="uid://c71d1t04aulbx" path="res://assets/tilesets/2026_01_31_0n1_Kleki.png" id="1_vonw3"]
+[ext_resource type="Script" uid="uid://dg0jxavxgfpmc" path="res://entities/player/line_2d.gd" id="3_oi3di"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vonw3"]
 
