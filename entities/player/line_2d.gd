@@ -28,7 +28,7 @@ func calculate_magnetism():
 		#force.y *= 0.2
 		#force.y = clamp(force.y, -1, 1)
 	
-	if p1.current_charge * p2.current_charge: # repel
+	if p1.current_charge * p2.current_charge == 1: # repel
 		p1.external_velocity -= force
 		p2.external_velocity += force
 	else: # if == -1, attract

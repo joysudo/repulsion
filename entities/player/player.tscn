@@ -1,7 +1,54 @@
 [gd_scene load_steps=4 format=3 uid="uid://g08seisd8imf"]
 
 [ext_resource type="Script" uid="uid://c56mkhue8dsfh" path="res://entities/player/player.gd" id="1_4flbx"]
-[ext_resource type="Texture2D" uid="uid://bmsl8ck1tb8q0" path="res://assets/icon.svg" id="2_onrkg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_symyc"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle_neg",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_neu",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_pos",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"jump_neg",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"jump_neu",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"jump_pos",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run_neg",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run_neu",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run_pos",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4flbx"]
 radius = 50.0
@@ -9,8 +56,10 @@ radius = 50.0
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_4flbx")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_onrkg")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_symyc")
+animation = &"run_neg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4flbx")
