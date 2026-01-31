@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var player_id: int
 @export var current_charge: int = 0 # -1, 0, 1
 @onready var sprite = $AnimatedSprite2D
+@onready var animation_player = $AnimationPlayer
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
@@ -37,7 +38,7 @@ func _physics_process(delta: float) -> void:
 
 func update_animation(velocity_vec: Vector2):
 	var state = ""
-	var charge_suffix = ""
+	#var charge_suffix = ""
 	# determine state
 	if not is_on_floor(): state = "jump"
 	elif abs(velocity_vec.x) > 0.1: state = "run"
@@ -49,11 +50,12 @@ func update_animation(velocity_vec: Vector2):
 	if input_direction < 0: sprite.flip_h = true
 	elif input_direction > 0: sprite.flip_h = false
 	# pick animation
-	match current_charge:
-		-1: charge_suffix = "_neg"
-		0: charge_suffix = "_neu"
-		1: charge_suffix = "_pos"
-	sprite.play(state + charge_suffix)
+	#match current_charge:
+		#-1: charge_suffix = "_neg"
+		#0: charge_suffix = "_neu"
+		#1: charge_suffix = "_pos"
+	#sprite.play(state + charge_suffix)
+	animation_player.play(state)
 
 func toggle_charge():
 	# this would be cleaner with an array and modulo but it is not complex enough to require that LOL

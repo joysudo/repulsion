@@ -185,8 +185,13 @@ position = Vector2(113, 216)
 player_id = 1
 
 [node name="AnimatedSprite2D" parent="Player1" index="0"]
+position = Vector2(14, 59)
 sprite_frames = SubResource("SpriteFrames_km5ld")
 animation = &"run_pos"
+offset = Vector2(-70, -295)
+
+[node name="CollisionShape2D" parent="Player1" index="1"]
+position = Vector2(6, 3)
 
 [node name="Player2" parent="." instance=ExtResource("1_u52ul")]
 position = Vector2(504, 216)
