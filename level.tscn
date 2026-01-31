@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://wdmusfh8lgs5"]
+[gd_scene load_steps=9 format=4 uid="uid://wdmusfh8lgs5"]
 
 [ext_resource type="PackedScene" uid="uid://g08seisd8imf" path="res://entities/player/player.tscn" id="1_u52ul"]
 [ext_resource type="Texture2D" uid="uid://c71d1t04aulbx" path="res://assets/tilesets/2026_01_31_0n1_Kleki.png" id="1_vonw3"]
+[ext_resource type="Texture2D" uid="uid://by0t3q2iim36l" path="res://entities/player/p1/p1pos.png" id="3_f2txt"]
 [ext_resource type="Script" uid="uid://dg0jxavxgfpmc" path="res://entities/player/line_2d.gd" id="3_oi3di"]
+[ext_resource type="Texture2D" uid="uid://mlrge1ml6nee" path="res://entities/player/p2/p2pos.png" id="4_1ainy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vonw3"]
 
@@ -29,12 +31,25 @@ position = Vector2(113, 216)
 player_id = 1
 current_charge = 1
 
+[node name="Sprite2D" parent="Player1" index="0"]
+position = Vector2(-6.9999995, -7.9999995)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_f2txt")
+
 [node name="Player2" parent="." instance=ExtResource("1_u52ul")]
 position = Vector2(504, 216)
 player_id = 2
 current_charge = 1
 
+[node name="Sprite2D" parent="Player2" index="0"]
+position = Vector2(-0.99999994, -1.9999999)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_1ainy")
+
 [node name="Line2D" type="Line2D" parent="." node_paths=PackedStringArray("p1", "p2")]
 script = ExtResource("3_oi3di")
 p1 = NodePath("../Player1")
 p2 = NodePath("../Player2")
+
+[editable path="Player1"]
+[editable path="Player2"]
