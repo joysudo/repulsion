@@ -1,9 +1,13 @@
 extends CharacterBody2D
 
 @export var player_id: int
+@export var current_charge: int = 0 # -1, 0, 1
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+const MAGNETIC_FORCE = 400.0
 
+var external_velocity = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -21,9 +25,10 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis(move_left, move_right)
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	velocity.x = direction * SPEED
+	velocity += external_velocity
 
 	move_and_slide()
+	
+	# external velocity needs to decrease. 20 is an arbitrary number
+	external_velocity = external_velocity.move_toward(Vector2.ZERO, 20)

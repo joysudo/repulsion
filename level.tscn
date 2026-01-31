@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://wdmusfh8lgs5"]
+[gd_scene load_steps=7 format=4 uid="uid://wdmusfh8lgs5"]
 
 [ext_resource type="PackedScene" uid="uid://g08seisd8imf" path="res://player.tscn" id="1_u52ul"]
 [ext_resource type="Texture2D" uid="uid://c71d1t04aulbx" path="res://2026_01_31_0n1_Kleki.png" id="1_vonw3"]
+[ext_resource type="Script" uid="uid://dg0jxavxgfpmc" path="res://line_2d.gd" id="3_oi3di"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vonw3"]
 
@@ -24,9 +25,16 @@ tile_map_data = PackedByteArray("AAD+////AAAAAAAAAAABAP//AAAAAAAAAAD9/wEAAAAAAAA
 tile_set = SubResource("TileSet_vonw3")
 
 [node name="Player1" parent="." instance=ExtResource("1_u52ul")]
-position = Vector2(182, 274)
+position = Vector2(113, 216)
 player_id = 1
+current_charge = 1
 
 [node name="Player2" parent="." instance=ExtResource("1_u52ul")]
-position = Vector2(116, 343)
+position = Vector2(504, 216)
 player_id = 2
+current_charge = -1
+
+[node name="Line2D" type="Line2D" parent="." node_paths=PackedStringArray("p1", "p2")]
+script = ExtResource("3_oi3di")
+p1 = NodePath("../Player1")
+p2 = NodePath("../Player2")
