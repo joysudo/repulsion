@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	var jump_action = "w" if player_id == 1 else "up"
 	if Input.is_action_just_pressed(jump_action) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	# cfalc player movements
+	# calc player movements
 	var direction := Input.get_axis(move_left, move_right)
 	velocity.x = direction * SPEED
 	velocity += external_velocity

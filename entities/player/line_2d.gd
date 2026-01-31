@@ -1,3 +1,5 @@
+# this script is the one that
+# even if visual line is not needed 
 extends Line2D
 
 @export var p1: CharacterBody2D
@@ -14,8 +16,8 @@ func _process(_delta):
 		hide()
 
 func calculate_magnetism():
-	const MAX_DISTANCE = 201
-	const MIN_DISTANCE = 200 # make this the length of player
+	const MAX_DISTANCE = 301
+	const MIN_DISTANCE = 200 # idk. was going to make this the length of player but this just works b etter
 	var dist_vect = p2.global_position - p1.global_position
 	var distance = clamp(dist_vect.length(), MIN_DISTANCE, MAX_DISTANCE)
 
@@ -24,9 +26,6 @@ func calculate_magnetism():
 	var direction = dist_vect.normalized()
 	# trying to add a min distance to denominator to stop force from exploding
 	var force = direction * force_strength * 10000 / (distance + MIN_DISTANCE) * clamp(1.0-(distance/MAX_DISTANCE), 0.0, 1.0)
-	#if abs(direction.y) > 0.5:
-		#force.y *= 0.2
-		#force.y = clamp(force.y, -1, 1)
 	
 	if p1.current_charge * p2.current_charge == 1: # repel
 		p1.external_velocity -= force
