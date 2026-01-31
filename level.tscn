@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=4 uid="uid://wdmusfh8lgs5"]
+
+[ext_resource type="PackedScene" uid="uid://g08seisd8imf" path="res://player.tscn" id="1_u52ul"]
+[ext_resource type="Texture2D" uid="uid://c71d1t04aulbx" path="res://2026_01_31_0n1_Kleki.png" id="1_vonw3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vonw3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oi3di"]
+texture = ExtResource("1_vonw3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_vonw3"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_vonw3")
+sources/0 = SubResource("TileSetAtlasSource_oi3di")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+////AAAAAAAAAAABAP//AAAAAAAAAAD9/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAD8/wEAAAAAAAAAAAAAABEAAAAAAAAAAAABABEAAAAAAAAAAAACABEAAAAAAAAAAAADABEAAAAAAAAAAAAEABEAAAAAAAAAAAAFABEAAAAAAAAAAAAGABEAAAAAAAAAAAAHABEAAAAAAAAAAAAIABEAAAAAAAAAAAAJABEAAAAAAAAAAAAKABEAAAAAAAAAAAALABEAAAAAAAAAAAAMABEAAAAAAAAAAAANABEAAAAAAAAAAAAOABEAAAAAAAAAAAAPABEAAAAAAAAAAAAQABEAAAAAAAAAAAARABEAAAAAAAAAAAASABEAAAAAAAAAAAATABEAAAAAAAAAAAAUABEAAAAAAAAAAAAVABEAAAAAAAAAAAAWABEAAAAAAAAAAAAXABEAAAAAAAAAAAAYABEAAAAAAAAAAAAZABEAAAAAAAAAAAAaABEAAAAAAAAAAAAbABEAAAAAAAAAAAAcABEAAAAAAAAAAAAdABEAAAAAAAAAAAAeABEAAAAAAAAAAAAfABEAAAAAAAAAAAAgABEAAAAAAAAAAAAhABEAAAAAAAAAAAAiABEAAAAAAAAAAAAjABEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_vonw3")
+
+[node name="Player1" parent="." instance=ExtResource("1_u52ul")]
+position = Vector2(182, 274)
+player_id = 1
+
+[node name="Player2" parent="." instance=ExtResource("1_u52ul")]
+position = Vector2(116, 343)
+player_id = 2
