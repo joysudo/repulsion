@@ -30,18 +30,36 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	update_animation(velocity)
 	external_velocity = Vector2.ZERO 
+	# update charge
+	var charge_action = "e" if player_id == 1 else "right_shift"
+	if Input.is_action_just_pressed(charge_action):
+		toggle_charge()
 
-func update_animation(velocity: Vector2):
+func update_animation(velocity_vec: Vector2):
 	var state = ""
 	var charge_suffix = ""
-	if not is_on_floor():
-		state = "jump"
-	elif abs(velocity.x) > 0.1:
-		state = "run"
-	else: 
-		state = "idle"
+	# determine state
+	if not is_on_floor(): state = "jump"
+	elif abs(velocity_vec.x) > 0.1: state = "run"
+	else: state = "idle"
+	# flip
+	var move_left = "a" if player_id == 1 else "left"
+	var move_right = "d" if player_id == 1 else "right"
+	var input_direction = Input.get_axis(move_left, move_right)
+	if input_direction < 0: sprite.flip_h = true
+	elif input_direction > 0: sprite.flip_h = false
+	# pick animation
 	match current_charge:
 		-1: charge_suffix = "_neg"
 		0: charge_suffix = "_neu"
 		1: charge_suffix = "_pos"
 	sprite.play(state + charge_suffix)
+
+func toggle_charge():
+	# this would be cleaner with an array and modulo but it is not complex enough to require that LOL
+	if current_charge == -1:
+		current_charge = 0
+	elif current_charge == 0:
+		current_charge = 1
+	else:
+		current_charge = -1

@@ -183,7 +183,7 @@ tile_set = SubResource("TileSet_vonw3")
 [node name="Player1" parent="." instance=ExtResource("1_u52ul")]
 position = Vector2(113, 216)
 player_id = 1
-current_charge = -1
+current_charge = 1
 
 [node name="AnimatedSprite2D" parent="Player1" index="0"]
 sprite_frames = SubResource("SpriteFrames_km5ld")
@@ -192,6 +192,7 @@ animation = &"run_pos"
 [node name="Player2" parent="." instance=ExtResource("1_u52ul")]
 position = Vector2(504, 216)
 player_id = 2
+current_charge = -1
 
 [node name="AnimatedSprite2D" parent="Player2" index="0"]
 sprite_frames = SubResource("SpriteFrames_2orkt")
