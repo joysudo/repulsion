@@ -4,8 +4,8 @@ extends CharacterBody2D
 @export var current_charge: int = 0 # -1, 0, 1
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-const MAGNETIC_FORCE = 400.0
+const JUMP_VELOCITY = -600.0
+const MAGNETIC_FORCE = 200.0
 
 var external_velocity = Vector2.ZERO
 
@@ -31,4 +31,5 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	# external velocity needs to decrease. 20 is an arbitrary number
-	external_velocity = external_velocity.move_toward(Vector2.ZERO, 20)
+	#external_velocity = external_velocity.move_toward(Vector2.ZERO, 20)
+	external_velocity = Vector2.ZERO

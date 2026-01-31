@@ -32,7 +32,7 @@ current_charge = 1
 [node name="Player2" parent="." instance=ExtResource("1_u52ul")]
 position = Vector2(504, 216)
 player_id = 2
-current_charge = -1
+current_charge = 1
 
 [node name="Line2D" type="Line2D" parent="." node_paths=PackedStringArray("p1", "p2")]
 script = ExtResource("3_oi3di")
