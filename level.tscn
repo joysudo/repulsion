@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://wdmusfh8lgs5"]
+[gd_scene load_steps=20 format=4 uid="uid://wdmusfh8lgs5"]
 
 [ext_resource type="PackedScene" uid="uid://bqryg3i0cyyd4" path="res://portal.tscn" id="1_8b0r0"]
 [ext_resource type="PackedScene" uid="uid://d0c7w8v00mld0" path="res://coin.tscn" id="1_aicyk"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://04sri4f2heir" path="res://entities/player/p2/p2neu.png" id="7_8cye3"]
 [ext_resource type="Script" uid="uid://dqg0op7rmh0qr" path="res://canvas_layer.gd" id="11_8b0r0"]
 [ext_resource type="FontFile" uid="uid://cuq8hcfyse7rh" path="res://assets/fonts/LTSuperior-Medium.ttf" id="12_h6smj"]
+[ext_resource type="Script" uid="uid://bikvqg1t6hcfd" path="res://camera_2d.gd" id="12_v5j5c"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vonw3"]
 
@@ -231,6 +232,9 @@ offset_bottom = 62.0
 theme_override_fonts/font = ExtResource("12_h6smj")
 theme_override_font_sizes/font_size = 30
 text = "coins collected: "
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("12_v5j5c")
 
 [editable path="Player1"]
 [editable path="Player2"]

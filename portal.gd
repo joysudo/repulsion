@@ -2,6 +2,8 @@ extends Area2D
 
 @export var rotation_speed: float = 1.0
 @export_file("*.tscn") var next_level_path: String # hgave to set this in inspector
+@export var shake_intensity: float = 5.0
+@export var shake_duration: float = 0.5
 
 var players_ready: int = 0
 var is_active: bool = false
@@ -38,5 +40,16 @@ func change_level() -> void:
 	if next_level_path == "":
 		print("no next level path set in portal's inspector!")
 		return
-		
+
+	var camera = get_viewport().get_camera_2d()
+	if camera:
+		var timer = 0.0
+		while timer < shake_duration:
+			camera.offset = Vector2(
+				randf_range(-shake_intensity, shake_intensity),
+				randf_range(-shake_intensity, shake_intensity)
+			)
+			timer += get_process_delta_time()
+			await get_tree().process_frame # Wait for the next frame
+			camera.offset = Vector2.ZERO		
 	get_tree().change_scene_to_file(next_level_path)
