@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
-const MAGNETIC_FORCE = 200.0
+const MAGNETIC_FORCE = 50.0
 var external_velocity = Vector2.ZERO
 
 func _ready() -> void:
@@ -17,16 +17,18 @@ func _physics_process(delta: float) -> void:
 	# gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	# handle all player inputs
+	# handle jump
+	var jump_action = "w" if player_id == 1 else "up"
+	if Input.is_action_just_pressed(jump_action) and can_jump():
+		velocity.y = JUMP_VELOCITY
+	# handle horizontal movement
 	var move_left = "a" if player_id == 1 else "left"
 	var move_right = "d" if player_id == 1 else "right"
-	var jump_action = "w" if player_id == 1 else "up"
-	if Input.is_action_just_pressed(jump_action) and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-	# calc player movements
 	var direction := Input.get_axis(move_left, move_right)
+	# set x directly, while y is just added to with gravity
 	velocity.x = direction * SPEED
-	velocity += external_velocity
+	# apply magnetism
+	velocity += external_velocity * 60 * delta
 	# move player
 	move_and_slide()
 	update_animation(velocity)
@@ -62,6 +64,17 @@ func update_animation(velocity_vec: Vector2):
 	sprite.play(state + charge_suffix)
 	animation_player.play(state)
 
+func can_jump():
+	if $CeilingChecker.is_colliding():
+		if $CeilingChecker.get_collider() is CharacterBody2D:
+			return false
+	if is_on_floor():
+		return true
+	if $FloorChecker.is_colliding():
+		if $FloorChecker.get_collider() is CharacterBody2D:
+			return true
+	return false 
+
 func toggle_charge():
 	animation_player.play("color_change")
 	print("hi")
@@ -72,3 +85,11 @@ func toggle_charge():
 		current_charge = 1
 	else:
 		current_charge = -1
+
+func is_supported_by_world() -> bool:
+	if is_on_floor():
+		return true
+	if $FloorChecker.is_colliding():
+		var c = $FloorChecker.get_collider()
+		return not (c is CharacterBody2D)
+	return false

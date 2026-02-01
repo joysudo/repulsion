@@ -54,9 +54,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_4flbx"]
 radius = 50.0
 
-[sub_resource type="Animation" id="Animation_symyc"]
-resource_name = "run"
-length = 0.225
+[sub_resource type="Animation" id="Animation_bls4j"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -64,10 +63,26 @@ tracks/0/path = NodePath("AnimatedSprite2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2, 0.25),
-"transitions": PackedFloat32Array(0.329877, 2.0705302, 0.37892917, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.2, 0.2), Vector2(0.19, 0.21), Vector2(0.21, 0.19), Vector2(0.2, 0.2)]
+"values": [Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_fkugw"]
+resource_name = "color_change"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1.931874, 0.4829682, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.18, 0.18), Vector2(0.2, 0.2)]
 }
 
 [sub_resource type="Animation" id="Animation_abrql"]
@@ -102,8 +117,9 @@ tracks/0/keys = {
 "values": [Vector2(0.2, 0.2), Vector2(0.22, 0.18), Vector2(0.20014778, 0.19985223), Vector2(0.17, 0.23), Vector2(0.21, 0.19), Vector2(0.2, 0.2)]
 }
 
-[sub_resource type="Animation" id="Animation_bls4j"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_symyc"]
+resource_name = "run"
+length = 0.225
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -111,26 +127,10 @@ tracks/0/path = NodePath("AnimatedSprite2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.05, 0.2, 0.25),
+"transitions": PackedFloat32Array(0.329877, 2.0705302, 0.37892917, 1),
 "update": 0,
-"values": [Vector2(0.2, 0.2)]
-}
-
-[sub_resource type="Animation" id="Animation_fkugw"]
-resource_name = "color_change"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1.931874, 0.4829682, 1),
-"update": 0,
-"values": [Vector2(0.2, 0.2), Vector2(0.18, 0.18), Vector2(0.2, 0.2)]
+"values": [Vector2(0.2, 0.2), Vector2(0.19, 0.21), Vector2(0.21, 0.19), Vector2(0.2, 0.2)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bls4j"]
@@ -143,6 +143,8 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 15
 script = ExtResource("1_4flbx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -162,3 +164,12 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_abrql")
+
+[node name="FloorChecker" type="RayCast2D" parent="."]
+position = Vector2(0, 33)
+collision_mask = 3
+
+[node name="CeilingChecker" type="RayCast2D" parent="."]
+position = Vector2(0, -13)
+target_position = Vector2(0, -52)
+collision_mask = 3
