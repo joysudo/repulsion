@@ -12,6 +12,7 @@ visible = false
 
 [node name="Portal" parent="." index="3"]
 position = Vector2(654, -501)
+next_level_path = "uid://djkmq6x50opa3"
 
 [node name="Coin" parent="." index="4"]
 position = Vector2(1099, -564)

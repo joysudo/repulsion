@@ -16,6 +16,7 @@ size = Vector2(59, 919)
 
 [node name="Portal" parent="." index="3"]
 position = Vector2(2368, 535)
+next_level_path = "uid://ddaqstcpq1chk"
 
 [node name="Coin" parent="." index="4"]
 position = Vector2(397, 597)
