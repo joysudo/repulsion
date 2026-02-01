@@ -1,0 +1,217 @@
+[gd_scene load_steps=15 format=4 uid="uid://wdmusfh8lgs5"]
+
+[ext_resource type="PackedScene" uid="uid://g08seisd8imf" path="res://entities/player/player.tscn" id="1_u52ul"]
+[ext_resource type="Texture2D" uid="uid://c71d1t04aulbx" path="res://assets/tilesets/2026_01_31_0n1_Kleki.png" id="1_vonw3"]
+[ext_resource type="Texture2D" uid="uid://v5ywbmanvxbg" path="res://entities/player/p1/p1neg.png" id="3_1ainy"]
+[ext_resource type="Texture2D" uid="uid://by0t3q2iim36l" path="res://entities/player/p1/p1pos.png" id="3_f2txt"]
+[ext_resource type="Script" uid="uid://dg0jxavxgfpmc" path="res://entities/player/line_2d.gd" id="3_oi3di"]
+[ext_resource type="Texture2D" uid="uid://mlrge1ml6nee" path="res://entities/player/p2/p2pos.png" id="4_1ainy"]
+[ext_resource type="Texture2D" uid="uid://b1ueak6by31kq" path="res://entities/player/p1/p1neu.png" id="4_n6hdu"]
+[ext_resource type="Texture2D" uid="uid://c6q0i1o7wlenf" path="res://entities/player/p2/p2neg.png" id="6_i2t4f"]
+[ext_resource type="Texture2D" uid="uid://04sri4f2heir" path="res://entities/player/p2/p2neu.png" id="7_8cye3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rtcij"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukwr8"]
+texture = ExtResource("1_vonw3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_vonw3"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_rtcij")
+sources/0 = SubResource("TileSetAtlasSource_ukwr8")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_km5ld"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1ainy")
+}],
+"loop": true,
+"name": &"idle_neg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_n6hdu")
+}],
+"loop": true,
+"name": &"idle_neu",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_f2txt")
+}],
+"loop": true,
+"name": &"idle_pos",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1ainy")
+}],
+"loop": true,
+"name": &"jump_neg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_n6hdu")
+}],
+"loop": true,
+"name": &"jump_neu",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_f2txt")
+}],
+"loop": true,
+"name": &"jump_pos",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1ainy")
+}],
+"loop": true,
+"name": &"run_neg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_n6hdu")
+}],
+"loop": true,
+"name": &"run_neu",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_f2txt")
+}],
+"loop": true,
+"name": &"run_pos",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2orkt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_i2t4f")
+}],
+"loop": true,
+"name": &"idle_neg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8cye3")
+}],
+"loop": true,
+"name": &"idle_neu",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1ainy")
+}],
+"loop": true,
+"name": &"idle_pos",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_i2t4f")
+}],
+"loop": true,
+"name": &"jump_neg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8cye3")
+}],
+"loop": true,
+"name": &"jump_neu",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1ainy")
+}],
+"loop": true,
+"name": &"jump_pos",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_i2t4f")
+}],
+"loop": true,
+"name": &"run_neg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8cye3")
+}],
+"loop": true,
+"name": &"run_neu",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1ainy")
+}],
+"loop": true,
+"name": &"run_pos",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(106, 45)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+////AAAAAAAAAAABAP//AAAAAAAAAAD9/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAD8/wEAAAAAAAAAAAAAABUAAAAAAAAAAAABABUAAAAAAAAAAAACABUAAAAAAAAAAAADABUAAAAAAAAAAAAEABUAAAAAAAAAAAAFABUAAAAAAAAAAAAGABUAAAAAAAAAAAAHABUAAAAAAAAAAAAIABUAAAAAAAAAAAAJABUAAAAAAAAAAAAKABUAAAAAAAAAAAALABUAAAAAAAAAAAAMABUAAAAAAAAAAAANABUAAAAAAAAAAAAOABUAAAAAAAAAAAAPABUAAAAAAAAAAAAQABUAAAAAAAAAAAARABUAAAAAAAAAAAASABUAAAAAAAAAAAATABUAAAAAAAAAAAAUABUAAAAAAAAAAAAVABUAAAAAAAAAAAAWABUAAAAAAAAAAAAXABUAAAAAAAAAAAAYABUAAAAAAAAAAAAZABUAAAAAAAAAAAAaABUAAAAAAAAAAAAbABUAAAAAAAAAAAAcABUAAAAAAAAAAAAdABUAAAAAAAAAAAAeABUAAAAAAAAAAAAfABUAAAAAAAAAAAAgABUAAAAAAAAAAAAhABUAAAAAAAAAAAAiABUAAAAAAAAAAAAjABUAAAAAAAAAAAAkABUAAAAAAAAAAAAlABUAAAAAAAAAAAAmABUAAAAAAAAAAAAnABUAAAAAAAAAAAAKABAAAAAAAAAAAAALABAAAAAAAAAAAAAMABAAAAAAAAAAAAANABAAAAAAAAAAAAAOABAAAAAAAAAAAAAPABAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_vonw3")
+
+[node name="Player1" parent="." instance=ExtResource("1_u52ul")]
+position = Vector2(113, 216)
+player_id = 1
+
+[node name="AnimatedSprite2D" parent="Player1" index="0"]
+position = Vector2(14, 59)
+sprite_frames = SubResource("SpriteFrames_km5ld")
+animation = &"jump_neg"
+offset = Vector2(-70, -295)
+
+[node name="CollisionShape2D" parent="Player1" index="1"]
+position = Vector2(6, 3)
+
+[node name="Player2" parent="." instance=ExtResource("1_u52ul")]
+position = Vector2(504, 216)
+player_id = 2
+
+[node name="AnimatedSprite2D" parent="Player2" index="0"]
+sprite_frames = SubResource("SpriteFrames_2orkt")
+animation = &"run_neu"
+
+[node name="Line2D" type="Line2D" parent="." node_paths=PackedStringArray("p1", "p2")]
+points = PackedVector2Array(610, 553)
+width = 6.0
+default_color = Color(1, 1, 1, 0.39215687)
+script = ExtResource("3_oi3di")
+p1 = NodePath("../Player1")
+p2 = NodePath("../Player2")
+
+[node name="Camera2D" type="Camera2D" parent="Line2D"]
+
+[editable path="Player1"]
+[editable path="Player2"]

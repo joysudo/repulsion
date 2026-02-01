@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://djkmq6x50opa3"]
+
+[ext_resource type="PackedScene" uid="uid://qhb0fuojmbqm" path="res://coin_counter_canvas.tscn" id="1_erq1u"]
+
+[node name="level_5" type="Node2D"]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("1_erq1u")]

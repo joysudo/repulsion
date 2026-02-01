@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://qhb0fuojmbqm"]
+
+[ext_resource type="Script" uid="uid://dqg0op7rmh0qr" path="res://canvas_layer.gd" id="1_o1pvy"]
+[ext_resource type="FontFile" uid="uid://cuq8hcfyse7rh" path="res://assets/fonts/LTSuperior-Medium.ttf" id="2_cr7cb"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_o1pvy")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1023.0
+offset_top = 32.0
+offset_right = 1235.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("2_cr7cb")
+theme_override_font_sizes/font_size = 30
+text = "coins collected: "
