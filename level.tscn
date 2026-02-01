@@ -187,7 +187,7 @@ player_id = 1
 [node name="AnimatedSprite2D" parent="Player1" index="0"]
 position = Vector2(14, 59)
 sprite_frames = SubResource("SpriteFrames_km5ld")
-animation = &"run_pos"
+animation = &"jump_neg"
 offset = Vector2(-70, -295)
 
 [node name="CollisionShape2D" parent="Player1" index="1"]
@@ -203,6 +203,15 @@ animation = &"run_neu"
 
 [node name="Line2D" type="Line2D" parent="." node_paths=PackedStringArray("p1", "p2")]
 points = PackedVector2Array(610, 553)
+width = 6.0
+default_color = Color(1, 1, 1, 0.39215687)
+script = ExtResource("3_oi3di")
+p1 = NodePath("../Player1")
+p2 = NodePath("../Player2")
+
+[node name="Line2D2" type="Line2D" parent="." node_paths=PackedStringArray("p1", "p2")]
+points = PackedVector2Array(610, 553)
+width = 6.0
 default_color = Color(1, 1, 1, 0.39215687)
 script = ExtResource("3_oi3di")
 p1 = NodePath("../Player1")

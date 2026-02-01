@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://g08seisd8imf"]
+[gd_scene load_steps=11 format=3 uid="uid://g08seisd8imf"]
 
 [ext_resource type="Script" uid="uid://c56mkhue8dsfh" path="res://entities/player/player.gd" id="1_4flbx"]
+[ext_resource type="AudioStream" uid="uid://n4bm4h3x13a1" path="res://sounds/jump.wav" id="2_abrql"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_symyc"]
 animations = [{
@@ -116,9 +117,26 @@ tracks/0/keys = {
 "values": [Vector2(0.2, 0.2)]
 }
 
+[sub_resource type="Animation" id="Animation_fkugw"]
+resource_name = "color_change"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1.931874, 0.4829682, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.18, 0.18), Vector2(0.2, 0.2)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bls4j"]
 _data = {
 &"RESET": SubResource("Animation_bls4j"),
+&"color_change": SubResource("Animation_fkugw"),
 &"idle": SubResource("Animation_abrql"),
 &"jump": SubResource("Animation_sglur"),
 &"run": SubResource("Animation_symyc")
@@ -141,3 +159,6 @@ shape = SubResource("CircleShape2D_4flbx")
 libraries = {
 &"": SubResource("AnimationLibrary_bls4j")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_abrql")

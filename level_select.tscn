@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl7emm4k7s72s"]
+
+[ext_resource type="FontFile" uid="uid://cuq8hcfyse7rh" path="res://assets/fonts/LTSuperior-Medium.ttf" id="1_il3u1"]
+
+[sub_resource type="Theme" id="Theme_uebnx"]
+default_font = ExtResource("1_il3u1")
+default_font_size = 21
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_il3u1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vomi7"]
+bg_color = Color(0.6, 0.6, 0.6, 0.078431375)
+shadow_size = 2
+shadow_offset = Vector2(4, 4)
+
+[node name="level_select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme = SubResource("Theme_uebnx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 333.0
+offset_bottom = 179.0
+theme_override_constants/separation = 21
+alignment = 1
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_il3u1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vomi7")
+text = "start new game"
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "level select"
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "options"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 0
+offset_top = 183.0
+offset_right = 333.0
+offset_bottom = 183.0

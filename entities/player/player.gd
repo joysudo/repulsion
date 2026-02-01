@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 
 func update_animation(velocity_vec: Vector2):
 	var state = ""
-	#var charge_suffix = ""
+	var charge_suffix = ""
 	# determine state
 	if not is_on_floor(): state = "jump"
 	elif abs(velocity_vec.x) > 0.1: state = "run"
@@ -50,14 +50,21 @@ func update_animation(velocity_vec: Vector2):
 	if input_direction < 0: sprite.flip_h = true
 	elif input_direction > 0: sprite.flip_h = false
 	# pick animation
-	#match current_charge:
-		#-1: charge_suffix = "_neg"
-		#0: charge_suffix = "_neu"
-		#1: charge_suffix = "_pos"
-	#sprite.play(state + charge_suffix)
+	match current_charge:
+		-1: charge_suffix = "_neg"
+		0: charge_suffix = "_neu"
+		1: charge_suffix = "_pos"
+	
+	# if color change is happening dont play the other animations
+	if animation_player.is_playing() and animation_player.current_animation == "color_change":
+		return
+	
+	sprite.play(state + charge_suffix)
 	animation_player.play(state)
 
 func toggle_charge():
+	animation_player.play("color_change")
+	print("hi")
 	# this would be cleaner with an array and modulo but it is not complex enough to require that LOL
 	if current_charge == -1:
 		current_charge = 0
