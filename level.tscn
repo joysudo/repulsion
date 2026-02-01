@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://wdmusfh8lgs5"]
+[gd_scene load_steps=15 format=4 uid="uid://wdmusfh8lgs5"]
 
 [ext_resource type="PackedScene" uid="uid://dsv76nb7dnm1c" path="res://coin.tscn" id="1_aicyk"]
 [ext_resource type="PackedScene" uid="uid://g08seisd8imf" path="res://entities/player/player.tscn" id="1_u52ul"]
@@ -216,16 +216,6 @@ script = ExtResource("3_oi3di")
 p1 = NodePath("../Player1")
 p2 = NodePath("../Player2")
 
-<<<<<<< Updated upstream
-=======
-[node name="Line2D2" type="Line2D" parent="." node_paths=PackedStringArray("p1", "p2")]
-points = PackedVector2Array(610, 553)
-width = 6.0
-default_color = Color(1, 1, 1, 0.39215687)
-script = ExtResource("3_oi3di")
-p1 = NodePath("../Player1")
-p2 = NodePath("../Player2")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("11_8b0r0")
 
@@ -247,6 +237,5 @@ theme_override_fonts/font = ExtResource("12_h6smj")
 theme_override_font_sizes/font_size = 30
 text = "0/5"
 
->>>>>>> Stashed changes
 [editable path="Player1"]
 [editable path="Player2"]
