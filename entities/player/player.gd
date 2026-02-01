@@ -12,6 +12,7 @@ var external_velocity = Vector2.ZERO
 
 func _ready() -> void:
 	update_animation(Vector2.ZERO)
+	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
 	# gravity
