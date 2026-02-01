@@ -1,7 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://b8p2raa8rna62"]
 
-[ext_resource type="PackedScene" uid="uid://qhb0fuojmbqm" path="res://coin_counter_canvas.tscn" id="1_fwt2v"]
+[ext_resource type="PackedScene" uid="uid://wdmusfh8lgs5" path="res://level.tscn" id="1_fwt2v"]
 
-[node name="level_4" type="Node2D"]
+[node name="Level" instance=ExtResource("1_fwt2v")]
 
-[node name="CanvasLayer" parent="." instance=ExtResource("1_fwt2v")]
+[editable path="Player1"]
+[editable path="Player2"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://wdmusfh8lgs5"]
+[gd_scene load_steps=24 format=4 uid="uid://wdmusfh8lgs5"]
 
 [ext_resource type="PackedScene" uid="uid://bqryg3i0cyyd4" path="res://portal.tscn" id="1_8b0r0"]
 [ext_resource type="PackedScene" uid="uid://d0c7w8v00mld0" path="res://coin.tscn" id="1_aicyk"]
@@ -13,7 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://04sri4f2heir" path="res://entities/player/p2/p2neu.png" id="7_8cye3"]
 [ext_resource type="Script" uid="uid://dqg0op7rmh0qr" path="res://canvas_layer.gd" id="11_8b0r0"]
 [ext_resource type="FontFile" uid="uid://cuq8hcfyse7rh" path="res://assets/fonts/LTSuperior-Medium.ttf" id="12_h6smj"]
-[ext_resource type="Script" uid="uid://bikvqg1t6hcfd" path="res://camera_2d.gd" id="12_v5j5c"]
+[ext_resource type="Texture2D" uid="uid://ddi3tiar02ay0" path="res://assets/backgrounds/2/purple_bg_1.png" id="15_v5j5c"]
+[ext_resource type="Texture2D" uid="uid://rql524bws0bp" path="res://assets/backgrounds/2/purple_bg_2.png" id="16_4c15r"]
+[ext_resource type="PackedScene" uid="uid://cj1qpffk6blds" path="res://camera_2d.tscn" id="17_4c15r"]
+[ext_resource type="Texture2D" uid="uid://6wke5fpohu5f" path="res://assets/backgrounds/2/purple_bg_3.png" id="17_ait7k"]
+[ext_resource type="Texture2D" uid="uid://cc5m8qk5gqdgs" path="res://assets/backgrounds/2/purple_bg_4.png" id="18_42xju"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vonw3"]
 
@@ -182,6 +186,41 @@ animations = [{
 
 [node name="Level" type="Node2D"]
 
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = -10
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(1280, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(320, 180)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_v5j5c")
+offset = Vector2(640, 360)
+
+[node name="Parallax2D4" type="Parallax2D" parent="."]
+z_index = -10
+scroll_scale = Vector2(0.7, 0.7)
+scroll_offset = Vector2(0, -16)
+repeat_size = Vector2(1280, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4"]
+position = Vector2(320, 180)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_42xju")
+offset = Vector2(640, 360)
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+z_index = 20
+scroll_scale = Vector2(1.2, 1.2)
+repeat_size = Vector2(1280, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
+z_index = -20
+position = Vector2(320, 180)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_ait7k")
+offset = Vector2(640, 360)
+
 [node name="Portal" parent="." instance=ExtResource("1_8b0r0")]
 position = Vector2(1166, 570)
 next_level_path = "uid://digdsx538fglt"
@@ -235,8 +274,20 @@ theme_override_font_sizes/font_size = 30
 text = "coins collected: "
 metadata/_edit_use_anchors_ = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("12_v5j5c")
+[node name="Camera2D" parent="." instance=ExtResource("17_4c15r")]
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+z_index = -10
+scroll_scale = Vector2(1.2, 1.2)
+repeat_size = Vector2(1280, 720)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+modulate = Color(1, 1, 1, 0.9411765)
+z_index = 100
+position = Vector2(320, 180)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_4c15r")
+offset = Vector2(640, 400)
 
 [editable path="Player1"]
 [editable path="Player2"]
