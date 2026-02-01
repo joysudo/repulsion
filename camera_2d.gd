@@ -4,7 +4,7 @@ extends Camera2D
 @onready var p2 = $"../Player2"
 @onready var tilemap = $"../TileMapLayer"
 
-const min_zoom = 0.7
+const min_zoom = 0.6
 const zoom_threshold = 150.0
 const max_dist = 1700.0
 const default_zoom = 1.2

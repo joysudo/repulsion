@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://mlrge1ml6nee" path="res://entities/player/p2/p2pos.png" id="9_ndgrd"]
 [ext_resource type="Script" uid="uid://dg0jxavxgfpmc" path="res://entities/player/line_2d.gd" id="10_h351q"]
 [ext_resource type="PackedScene" uid="uid://d0c7w8v00mld0" path="res://coin.tscn" id="11_dpc8t"]
-[ext_resource type="PackedScene" path="res://coin_counter_canvas.tscn" id="12_hbb88"]
+[ext_resource type="PackedScene" uid="uid://qhb0fuojmbqm" path="res://coin_counter_canvas.tscn" id="12_hbb88"]
 [ext_resource type="PackedScene" uid="uid://bqryg3i0cyyd4" path="res://portal.tscn" id="13_wcjpl"]
 [ext_resource type="PackedScene" uid="uid://cj1qpffk6blds" path="res://camera_2d.tscn" id="14_5orea"]
 

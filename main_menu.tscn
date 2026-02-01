@@ -1,9 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://bh2knbs2xqy6b"]
+[gd_scene load_steps=19 format=3 uid="uid://bh2knbs2xqy6b"]
 
-[ext_resource type="FontFile" uid="uid://cuq8hcfyse7rh" path="res://assets/fonts/LTSuperior-Medium.ttf" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://bfpvtpdvln22i" path="res://menu/menu_bg.png" id="1_w44g7"]
 [ext_resource type="FontFile" uid="uid://4vtnx1ki0vd0" path="res://assets/fonts/LTSuperior-Light.ttf" id="2_0o4t1"]
 [ext_resource type="PackedScene" uid="uid://g08seisd8imf" path="res://entities/player/player.tscn" id="2_8qtwp"]
+[ext_resource type="Theme" uid="uid://cwwf7i7gvq5bq" path="res://menu_theme.tres" id="2_iotk1"]
 [ext_resource type="StyleBox" uid="uid://d20qdyea0roon" path="res://menu/menu_options_hover.tres" id="3_0o4t1"]
 [ext_resource type="Texture2D" uid="uid://v5ywbmanvxbg" path="res://entities/player/p1/p1neg.png" id="3_dy7ct"]
 [ext_resource type="Script" uid="uid://40tcibouqsm4" path="res://menu/button.gd" id="4_0k4wn"]
@@ -13,10 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://c6q0i1o7wlenf" path="res://entities/player/p2/p2neg.png" id="6_j5v2v"]
 [ext_resource type="Texture2D" uid="uid://04sri4f2heir" path="res://entities/player/p2/p2neu.png" id="7_iotk1"]
 [ext_resource type="Texture2D" uid="uid://mlrge1ml6nee" path="res://entities/player/p2/p2pos.png" id="8_w44g7"]
-
-[sub_resource type="Theme" id="Theme_7vrkn"]
-default_font = ExtResource("1_06t4h")
-default_font_size = 21
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fu7sn"]
 
@@ -191,7 +187,7 @@ texture = ExtResource("1_w44g7")
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
-theme = SubResource("Theme_7vrkn")
+theme = ExtResource("2_iotk1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
