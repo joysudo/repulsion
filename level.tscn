@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=4 uid="uid://wdmusfh8lgs5"]
+[gd_scene load_steps=19 format=4 uid="uid://wdmusfh8lgs5"]
 
+[ext_resource type="PackedScene" uid="uid://bqryg3i0cyyd4" path="res://portal.tscn" id="1_8b0r0"]
 [ext_resource type="PackedScene" uid="uid://d0c7w8v00mld0" path="res://coin.tscn" id="1_aicyk"]
 [ext_resource type="PackedScene" uid="uid://g08seisd8imf" path="res://entities/player/player.tscn" id="1_u52ul"]
 [ext_resource type="Texture2D" uid="uid://c71d1t04aulbx" path="res://assets/tilesets/2026_01_31_0n1_Kleki.png" id="1_vonw3"]
@@ -180,14 +181,17 @@ animations = [{
 
 [node name="Level" type="Node2D"]
 
-[node name="Coin" parent="." groups=["coins", "player"] instance=ExtResource("1_aicyk")]
+[node name="Portal" parent="." instance=ExtResource("1_8b0r0")]
+position = Vector2(1166, 570)
+
+[node name="Coin" parent="." groups=["coins"] instance=ExtResource("1_aicyk")]
 position = Vector2(170, 603)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD+////AAAAAAAAAAABAP//AAAAAAAAAAD9/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAD8/wEAAAAAAAAAAAAAABUAAAAAAAAAAAABABUAAAAAAAAAAAACABUAAAAAAAAAAAADABUAAAAAAAAAAAAEABUAAAAAAAAAAAAFABUAAAAAAAAAAAAGABUAAAAAAAAAAAAHABUAAAAAAAAAAAAIABUAAAAAAAAAAAAJABUAAAAAAAAAAAAKABUAAAAAAAAAAAALABUAAAAAAAAAAAAMABUAAAAAAAAAAAANABUAAAAAAAAAAAAOABUAAAAAAAAAAAAPABUAAAAAAAAAAAAQABUAAAAAAAAAAAARABUAAAAAAAAAAAASABUAAAAAAAAAAAATABUAAAAAAAAAAAAUABUAAAAAAAAAAAAVABUAAAAAAAAAAAAWABUAAAAAAAAAAAAXABUAAAAAAAAAAAAYABUAAAAAAAAAAAAZABUAAAAAAAAAAAAaABUAAAAAAAAAAAAbABUAAAAAAAAAAAAcABUAAAAAAAAAAAAdABUAAAAAAAAAAAAeABUAAAAAAAAAAAAfABUAAAAAAAAAAAAgABUAAAAAAAAAAAAhABUAAAAAAAAAAAAiABUAAAAAAAAAAAAjABUAAAAAAAAAAAAkABUAAAAAAAAAAAAlABUAAAAAAAAAAAAmABUAAAAAAAAAAAAnABUAAAAAAAAAAAAKABAAAAAAAAAAAAALABAAAAAAAAAAAAAMABAAAAAAAAAAAAANABAAAAAAAAAAAAAOABAAAAAAAAAAAAAPABAAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_vonw3")
 
-[node name="Player1" parent="." instance=ExtResource("1_u52ul")]
+[node name="Player1" parent="." groups=["player"] instance=ExtResource("1_u52ul")]
 position = Vector2(113, 216)
 player_id = 1
 
@@ -200,7 +204,7 @@ offset = Vector2(-70, -295)
 [node name="CollisionShape2D" parent="Player1" index="1"]
 position = Vector2(6, 3)
 
-[node name="Player2" parent="." instance=ExtResource("1_u52ul")]
+[node name="Player2" parent="." groups=["player"] instance=ExtResource("1_u52ul")]
 position = Vector2(504, 216)
 player_id = 2
 
