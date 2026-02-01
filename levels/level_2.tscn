@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://ddaqstcpq1chk"]
+[gd_scene load_steps=9 format=4 uid="uid://ddaqstcpq1chk"]
 
 [ext_resource type="PackedScene" uid="uid://wdmusfh8lgs5" path="res://level.tscn" id="1_pqqg8"]
 [ext_resource type="Texture2D" uid="uid://cqmp6vkdyxcxb" path="res://assets/backgrounds/2/Untitled132_20260202051806.png" id="2_5722l"]
 [ext_resource type="Texture2D" uid="uid://r1fghdxdfggx" path="res://assets/backgrounds/2/beachy_bg_1 (1).png" id="2_ilhis"]
+[ext_resource type="Texture2D" uid="uid://cl1ypbf47wl6q" path="res://assets/backgrounds/2/beachy_bg_4.png" id="3_ep78u"]
 [ext_resource type="Texture2D" uid="uid://ds8s06o0ihg77" path="res://assets/backgrounds/2/Untitled132_20260202051811.png" id="3_ilhis"]
 [ext_resource type="Texture2D" uid="uid://ukp5ui6w34qa" path="res://assets/backgrounds/2/Untitled132_20260202051812.png" id="4_ep78u"]
 [ext_resource type="PackedScene" uid="uid://d0c7w8v00mld0" path="res://coin.tscn" id="11_dpc8t"]
@@ -17,6 +18,9 @@ texture = ExtResource("2_ilhis")
 
 [node name="Parallax2D4" parent="." index="1"]
 visible = false
+
+[node name="Sprite2D" parent="Parallax2D4" index="0"]
+texture = ExtResource("3_ep78u")
 
 [node name="Parallax2D3" parent="." index="2"]
 visible = false
