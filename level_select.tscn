@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cl7emm4k7s72s"]
+[gd_scene load_steps=18 format=3 uid="uid://cl7emm4k7s72s"]
 
 [ext_resource type="Texture2D" uid="uid://bfpvtpdvln22i" path="res://menu/menu_bg.png" id="1_1iyaf"]
 [ext_resource type="FontFile" uid="uid://cuq8hcfyse7rh" path="res://assets/fonts/LTSuperior-Medium.ttf" id="1_il3u1"]
@@ -6,6 +6,10 @@
 [ext_resource type="StyleBox" uid="uid://d20qdyea0roon" path="res://menu/menu_options_hover.tres" id="4_8qr5y"]
 [ext_resource type="Texture2D" uid="uid://gu8c4f5q4qta" path="res://images/magnet (2).png" id="4_apu6u"]
 [ext_resource type="Script" uid="uid://b2buimbpgd8yg" path="res://menu/lvselect_button_1.gd" id="6_lmhjs"]
+[ext_resource type="Script" uid="uid://nlubphgu7apc" path="res://menu/lvselect_button_2.gd" id="7_1iyaf"]
+[ext_resource type="Script" uid="uid://bktngxwj20eu2" path="res://menu/lvselect_button_3.gd" id="8_05pd3"]
+[ext_resource type="Script" uid="uid://cynjo7losf2is" path="res://menu/lvselect_button_4.gd" id="9_hhsoe"]
+[ext_resource type="Script" uid="uid://bxm3mij5tvcgg" path="res://menu/lvselect_button_5.gd" id="10_rtb5x"]
 
 [sub_resource type="Theme" id="Theme_vnx2f"]
 default_font = ExtResource("1_il3u1")
@@ -89,6 +93,7 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lmhjs")
 theme_override_styles/hover = ExtResource("4_8qr5y")
 icon = ExtResource("4_apu6u")
+script = ExtResource("7_1iyaf")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -106,6 +111,7 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1iyaf")
 theme_override_styles/hover = ExtResource("4_8qr5y")
 icon = ExtResource("4_apu6u")
+script = ExtResource("8_05pd3")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
@@ -132,6 +138,7 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1wnlg")
 theme_override_styles/hover = ExtResource("4_8qr5y")
 icon = ExtResource("4_apu6u")
+script = ExtResource("9_hhsoe")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
@@ -149,6 +156,7 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_8qr5y")
 theme_override_styles/hover = ExtResource("4_8qr5y")
 icon = ExtResource("4_apu6u")
+script = ExtResource("10_rtb5x")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel/HBoxContainer2/VBoxContainer3"]
 layout_mode = 2
@@ -175,3 +183,7 @@ scale_amount_max = 5.0
 color = Color(1, 1, 1, 0.5254902)
 
 [connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/Button" to="Panel/HBoxContainer/VBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer2/Button" to="Panel/HBoxContainer/VBoxContainer2/Button" method="_on_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer3/Button" to="Panel/HBoxContainer/VBoxContainer3/Button" method="_on_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer2/VBoxContainer/Button" to="Panel/HBoxContainer2/VBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer2/VBoxContainer3/Button" to="Panel/HBoxContainer2/VBoxContainer3/Button" method="_on_pressed"]
