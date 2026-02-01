@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://wdmusfh8lgs5"]
+[gd_scene load_steps=18 format=4 uid="uid://wdmusfh8lgs5"]
 
 [ext_resource type="PackedScene" uid="uid://dsv76nb7dnm1c" path="res://coin.tscn" id="1_aicyk"]
 [ext_resource type="PackedScene" uid="uid://g08seisd8imf" path="res://entities/player/player.tscn" id="1_u52ul"]
