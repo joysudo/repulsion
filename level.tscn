@@ -184,6 +184,7 @@ animations = [{
 
 [node name="Portal" parent="." instance=ExtResource("1_8b0r0")]
 position = Vector2(1166, 570)
+next_level_path = "uid://digdsx538fglt"
 
 [node name="Coin" parent="." groups=["coins"] instance=ExtResource("1_aicyk")]
 position = Vector2(170, 603)
@@ -232,6 +233,7 @@ offset_bottom = 62.0
 theme_override_fonts/font = ExtResource("12_h6smj")
 theme_override_font_sizes/font_size = 30
 text = "coins collected: "
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("12_v5j5c")

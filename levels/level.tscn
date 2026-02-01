@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://wdmusfh8lgs5"]
+[gd_scene load_steps=16 format=4 uid="uid://wdmusfh8lgs5"]
 
 [ext_resource type="PackedScene" uid="uid://g08seisd8imf" path="res://entities/player/player.tscn" id="1_u52ul"]
 [ext_resource type="Texture2D" uid="uid://c71d1t04aulbx" path="res://assets/tilesets/2026_01_31_0n1_Kleki.png" id="1_vonw3"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b1ueak6by31kq" path="res://entities/player/p1/p1neu.png" id="4_n6hdu"]
 [ext_resource type="Texture2D" uid="uid://c6q0i1o7wlenf" path="res://entities/player/p2/p2neg.png" id="6_i2t4f"]
 [ext_resource type="Texture2D" uid="uid://04sri4f2heir" path="res://entities/player/p2/p2neu.png" id="7_8cye3"]
+[ext_resource type="PackedScene" uid="uid://bqryg3i0cyyd4" path="res://portal.tscn" id="10_ukwr8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rtcij"]
 
@@ -212,6 +213,8 @@ p1 = NodePath("../Player1")
 p2 = NodePath("../Player2")
 
 [node name="Camera2D" type="Camera2D" parent="Line2D"]
+
+[node name="Portal" parent="." instance=ExtResource("10_ukwr8")]
 
 [editable path="Player1"]
 [editable path="Player2"]

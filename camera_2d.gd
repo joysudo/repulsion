@@ -6,5 +6,5 @@ extends Camera2D
 func _process(_delta: float) -> void:
 	if is_instance_valid(p1) and is_instance_valid(p2):
 		global_position = (p1.global_position + p2.global_position) / 2.0
-		global_position.y -= 200
+		global_position.y -= 130
 		global_position.x += 100

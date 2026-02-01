@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://digdsx538fglt"]
+[gd_scene load_steps=21 format=4 uid="uid://digdsx538fglt"]
 
 [ext_resource type="Texture2D" uid="uid://c71d1t04aulbx" path="res://assets/tilesets/2026_01_31_0n1_Kleki.png" id="1_vm7no"]
 [ext_resource type="Texture2D" uid="uid://xpxrpomrinxd" path="res://assets/tilesets/tilemap.jpg" id="2_hbb88"]
@@ -11,7 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://mlrge1ml6nee" path="res://entities/player/p2/p2pos.png" id="9_ndgrd"]
 [ext_resource type="Script" uid="uid://dg0jxavxgfpmc" path="res://entities/player/line_2d.gd" id="10_h351q"]
 [ext_resource type="PackedScene" uid="uid://d0c7w8v00mld0" path="res://coin.tscn" id="11_dpc8t"]
-[ext_resource type="PackedScene" uid="uid://qhb0fuojmbqm" path="res://coin_counter_canvas.tscn" id="12_hbb88"]
+[ext_resource type="PackedScene" path="res://coin_counter_canvas.tscn" id="12_hbb88"]
+[ext_resource type="PackedScene" uid="uid://bqryg3i0cyyd4" path="res://portal.tscn" id="13_wcjpl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukwr8"]
 texture = ExtResource("1_vm7no")
@@ -215,6 +216,7 @@ position = Vector2(6, 3)
 
 [node name="Camera2D" type="Camera2D" parent="Player1"]
 position = Vector2(284, -156)
+zoom = Vector2(0.9, 0.9)
 
 [node name="Player2" parent="." groups=["player"] instance=ExtResource("3_wcjpl")]
 position = Vector2(424, 0)
@@ -275,6 +277,10 @@ scale = Vector2(0.29999757, 0.29999757)
 [node name="CanvasLayer" parent="." instance=ExtResource("12_hbb88")]
 offset = Vector2(75, 0)
 transform = Transform2D(1, 0, 0, 1, 75, 0)
+
+[node name="Portal" parent="." instance=ExtResource("13_wcjpl")]
+position = Vector2(1718, 556)
+next_level_path = "uid://bkwxeoginvre"
 
 [editable path="Player1"]
 [editable path="Player2"]
