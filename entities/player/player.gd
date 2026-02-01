@@ -81,7 +81,7 @@ func can_jump():
 func toggle_charge():
 	animation_player.play("color_change")
 	print("hi")
-	# this would be cleaner with an array and modulo but it is not complex enough to require that LOL
+	# this would be cleaner with an array and modulo but it is not complex= enough to require that LOL
 	if current_charge == -1:
 		current_charge = 0
 	elif current_charge == 0:

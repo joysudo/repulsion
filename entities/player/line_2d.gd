@@ -28,17 +28,24 @@ func calculate_magnetism():
 	var dist_vect = p2.global_position - p1.global_position
 	var distance = clamp(dist_vect.length(), MIN_DISTANCE, MAX_DISTANCE)
 
-	if distance > MAX_DISTANCE or distance < 20: 
+	if distance > MAX_DISTANCE or distance < 100: 
 		return # if too far or close, don't calculate attraction
 	
+	if mutually_airborne and p1.current_charge * p2.current_charge == -1:
+		return
+	
 	var direction = dist_vect.normalized()
+	#if direction.y < 0.5 and !(p1.current_charge * p2.current_charge):
+		#direction.x *= 2
+		#direction = direction.normalized()
+	
 	# trying to add a min distance to denominator to stop force from exploding
-	var force = direction * force_strength * 1000 / (distance + MIN_DISTANCE) * clamp(1.0-(distance/MAX_DISTANCE), 0.0, 1.0)
-	
-	
+	var force
 	if p1.current_charge * p2.current_charge == 1: # repel
+		force = direction * force_strength * 10000 / (distance + MIN_DISTANCE) * clamp(1.0-(distance/MAX_DISTANCE), 0.0, 1.0)
 		p1.external_velocity -= force
 		p2.external_velocity += force
 	else: # if == -1, attract
+		force = direction * force_strength * 8000 / (distance + MIN_DISTANCE) * clamp(1.0-(distance/MAX_DISTANCE), 0.0, 1.0)
 		p1.external_velocity += force
 		p2.external_velocity -= force
