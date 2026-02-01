@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cl7emm4k7s72s"]
+[gd_scene load_steps=14 format=3 uid="uid://cl7emm4k7s72s"]
 
 [ext_resource type="Texture2D" uid="uid://bfpvtpdvln22i" path="res://menu/menu_bg.png" id="1_1iyaf"]
 [ext_resource type="FontFile" uid="uid://cuq8hcfyse7rh" path="res://assets/fonts/LTSuperior-Medium.ttf" id="1_il3u1"]
 [ext_resource type="FontFile" uid="uid://da6dwn8yx0gdd" path="res://assets/fonts/Tondu-Beta.ttf" id="3_wevku"]
 [ext_resource type="StyleBox" uid="uid://d20qdyea0roon" path="res://menu/menu_options_hover.tres" id="4_8qr5y"]
 [ext_resource type="Texture2D" uid="uid://gu8c4f5q4qta" path="res://images/magnet (2).png" id="4_apu6u"]
+[ext_resource type="Script" uid="uid://b2buimbpgd8yg" path="res://menu/lvselect_button_1.gd" id="6_lmhjs"]
 
 [sub_resource type="Theme" id="Theme_vnx2f"]
 default_font = ExtResource("1_il3u1")
@@ -70,6 +71,7 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bv7n5")
 theme_override_styles/hover = ExtResource("4_8qr5y")
 icon = ExtResource("4_apu6u")
+script = ExtResource("6_lmhjs")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -171,3 +173,5 @@ angular_velocity_max = 415.67
 scale_amount_min = 5.0
 scale_amount_max = 5.0
 color = Color(1, 1, 1, 0.5254902)
+
+[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/Button" to="Panel/HBoxContainer/VBoxContainer/Button" method="_on_pressed"]
