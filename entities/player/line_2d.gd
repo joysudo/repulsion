@@ -24,7 +24,7 @@ func calculate_magnetism():
 
 	
 	const MAX_DISTANCE = 301
-	const MIN_DISTANCE = 200 # idk. was going to make this the length of player but this just works b etter
+	const MIN_DISTANCE = 100 # idk. was going to make this the length of player but this just works b etter
 	var dist_vect = p2.global_position - p1.global_position
 	var distance = clamp(dist_vect.length(), MIN_DISTANCE, MAX_DISTANCE)
 
@@ -46,6 +46,6 @@ func calculate_magnetism():
 		p1.external_velocity -= force
 		p2.external_velocity += force
 	else: # if == -1, attract
-		force = direction * force_strength * 8000 / (distance + MIN_DISTANCE) * clamp(1.0-(distance/MAX_DISTANCE), 0.0, 1.0)
+		force = direction * force_strength * 7000 / (distance + MIN_DISTANCE) * clamp(1.0-(distance/MAX_DISTANCE), 0.0, 1.0)
 		p1.external_velocity += force
 		p2.external_velocity -= force

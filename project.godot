@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="repulsion"
-run/main_scene="uid://wdmusfh8lgs5"
+run/main_scene="uid://bh2knbs2xqy6b"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/image="uid://by0t3q2iim36l"
 config/icon="res://assets/icon.svg"
 
 [display]
