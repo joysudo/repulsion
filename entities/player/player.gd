@@ -30,6 +30,9 @@ func _physics_process(delta: float) -> void:
 	# apply magnetism
 	velocity += external_velocity * 60 * delta
 	# move player
+	#if not is_supported_by_world():
+		#if velocity.y < 0:
+			#velocity.y = max(velocity.y, get_gravity().y * delta)
 	move_and_slide()
 	update_animation(velocity)
 	external_velocity = Vector2.ZERO 

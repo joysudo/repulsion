@@ -35,9 +35,6 @@ func calculate_magnetism():
 	# trying to add a min distance to denominator to stop force from exploding
 	var force = direction * force_strength * 1000 / (distance + MIN_DISTANCE) * clamp(1.0-(distance/MAX_DISTANCE), 0.0, 1.0)
 	
-	if mutually_airborne:
-		if force.y > 0:
-			force.y = 0
 	
 	if p1.current_charge * p2.current_charge == 1: # repel
 		p1.external_velocity -= force
