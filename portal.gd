@@ -5,6 +5,9 @@ extends Area2D
 @export var shake_intensity: float = 5.0
 @export var shake_duration: float = 0.5
 
+@onready var open_sfx = $OpenSFX
+@onready var enter_sfx = $EnterSFX
+
 var players_ready: int = 0
 var is_active: bool = false
 
@@ -19,6 +22,8 @@ func _process(delta: float) -> void:
 		is_active = true
 		monitoring = true
 		$GPUParticles2D.emitting = true
+		open_sfx.pitch_scale = randf_range(0.95, 1.05)
+		open_sfx.play()
 	if is_active:
 		scale = scale.lerp(Vector2(1, 1), 0.1)
 
@@ -28,6 +33,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 func handle_player_entry(player: Node2D) -> void:
 	players_ready += 1
+	enter_sfx.play()
 	player.hide()
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 	for child in player.get_children():

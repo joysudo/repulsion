@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://wdmusfh8lgs5"]
+[gd_scene load_steps=26 format=4 uid="uid://wdmusfh8lgs5"]
 
 [ext_resource type="PackedScene" uid="uid://bqryg3i0cyyd4" path="res://portal.tscn" id="1_8b0r0"]
 [ext_resource type="PackedScene" uid="uid://d0c7w8v00mld0" path="res://coin.tscn" id="1_aicyk"]
@@ -9,7 +9,9 @@
 [ext_resource type="Script" uid="uid://dg0jxavxgfpmc" path="res://entities/player/line_2d.gd" id="3_oi3di"]
 [ext_resource type="Texture2D" uid="uid://mlrge1ml6nee" path="res://entities/player/p2/p2pos.png" id="4_1ainy"]
 [ext_resource type="Texture2D" uid="uid://b1ueak6by31kq" path="res://entities/player/p1/p1neu.png" id="4_n6hdu"]
+[ext_resource type="AudioStream" uid="uid://dj2hlci57o7vf" path="res://sounds/portal_opens.mp3" id="5_42xju"]
 [ext_resource type="Texture2D" uid="uid://c6q0i1o7wlenf" path="res://entities/player/p2/p2neg.png" id="6_i2t4f"]
+[ext_resource type="AudioStream" uid="uid://bjjrqkrjyxf5w" path="res://sounds/enter_portal.mp3" id="6_v7sqt"]
 [ext_resource type="Texture2D" uid="uid://04sri4f2heir" path="res://entities/player/p2/p2neu.png" id="7_8cye3"]
 [ext_resource type="Script" uid="uid://dqg0op7rmh0qr" path="res://canvas_layer.gd" id="11_8b0r0"]
 [ext_resource type="FontFile" uid="uid://cuq8hcfyse7rh" path="res://assets/fonts/LTSuperior-Medium.ttf" id="12_h6smj"]
@@ -224,6 +226,12 @@ offset = Vector2(640, 360)
 [node name="Portal" parent="." instance=ExtResource("1_8b0r0")]
 position = Vector2(1166, 570)
 next_level_path = "uid://digdsx538fglt"
+
+[node name="OpenSFX" type="AudioStreamPlayer2D" parent="Portal"]
+stream = ExtResource("5_42xju")
+
+[node name="EnterSFX" type="AudioStreamPlayer2D" parent="Portal"]
+stream = ExtResource("6_v7sqt")
 
 [node name="Coin" parent="." groups=["coins"] instance=ExtResource("1_aicyk")]
 position = Vector2(170, 603)
