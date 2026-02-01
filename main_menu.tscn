@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://bh2knbs2xqy6b"]
+[gd_scene load_steps=22 format=3 uid="uid://bh2knbs2xqy6b"]
 
 [ext_resource type="FontFile" uid="uid://cuq8hcfyse7rh" path="res://assets/fonts/LTSuperior-Medium.ttf" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://bfpvtpdvln22i" path="res://menu/menu_bg.png" id="1_w44g7"]
 [ext_resource type="FontFile" uid="uid://4vtnx1ki0vd0" path="res://assets/fonts/LTSuperior-Light.ttf" id="2_0o4t1"]
 [ext_resource type="PackedScene" uid="uid://g08seisd8imf" path="res://entities/player/player.tscn" id="2_8qtwp"]
 [ext_resource type="StyleBox" uid="uid://d20qdyea0roon" path="res://menu/menu_options_hover.tres" id="3_0o4t1"]
@@ -185,6 +186,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="MenuBg" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_w44g7")
+
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 1280.0
@@ -245,6 +250,22 @@ offset = Vector2(-70, -295)
 
 [node name="CollisionShape2D" parent="Player1" index="1"]
 position = Vector2(6, 3)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(195, 358)
+amount = 20
+lifetime = 20.0
+emission_shape = 3
+emission_rect_extents = Vector2(200, 400)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+angular_velocity_min = 415.67
+angular_velocity_max = 415.67
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color = Color(1, 1, 1, 0.5254902)
 
 [node name="Player2" parent="." instance=ExtResource("2_8qtwp")]
 position = Vector2(1038, 588)
