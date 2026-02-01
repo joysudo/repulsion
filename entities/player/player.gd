@@ -18,14 +18,23 @@ func _physics_process(delta: float) -> void:
 	# gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
 	# handle jump
 	var jump_action = "w" if player_id == 1 else "up"
 	if Input.is_action_just_pressed(jump_action) and can_jump():
+		$JumpSound.play()
 		velocity.y = JUMP_VELOCITY
 	# handle horizontal movement
 	var move_left = "a" if player_id == 1 else "left"
 	var move_right = "d" if player_id == 1 else "right"
 	var direction := Input.get_axis(move_left, move_right)
+	
+	print(velocity.x)
+	
+	if is_on_floor() and not velocity.x == 0:
+		print("bruh")
+		$WalkSound.play()
+	
 	# set x directly, while y is just added to with gravity
 	velocity.x = direction * SPEED
 	# apply magnetism

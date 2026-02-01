@@ -207,6 +207,8 @@ theme_override_styles/hover = ExtResource("3_0o4t1")
 text = "start new game"
 script = ExtResource("4_0k4wn")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Panel/VBoxContainer/Button"]
+
 [node name="Button2" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_0o4t1")
@@ -215,6 +217,8 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_8qtwp")
 theme_override_styles/hover = ExtResource("3_0o4t1")
 text = "level select"
 script = ExtResource("5_j5v2v")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Panel/VBoxContainer/Button2"]
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
 layout_mode = 0
