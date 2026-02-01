@@ -4,9 +4,21 @@ extends Area2D
 @export_file("*.tscn") var next_level_path: String # hgave to set this in inspector
 
 var players_ready: int = 0
-	
+var is_active: bool = false
+
+func _ready():
+	scale = Vector2.ZERO
+	monitoring = false
+
 func _process(delta: float) -> void:
 	$Sprite2D.rotation += rotation_speed * delta
+	var coins = get_tree().get_nodes_in_group("coins")
+	if coins.size() == 0 and not is_active:
+		is_active = true
+		monitoring = true
+		$GPUParticles2D.emitting = true
+	if is_active:
+		scale = scale.lerp(Vector2(1, 1), 0.1)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

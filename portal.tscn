@@ -1,10 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqryg3i0cyyd4"]
+[gd_scene load_steps=9 format=3 uid="uid://bqryg3i0cyyd4"]
 
 [ext_resource type="Script" uid="uid://dcf3h3v60gn32" path="res://portal.gd" id="1_ef3v5"]
 [ext_resource type="Texture2D" uid="uid://cy4yvbt2khyw4" path="res://assets/portal.png" id="2_grrij"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6r214"]
 radius = 84.14868
+
+[sub_resource type="Gradient" id="Gradient_ef3v5"]
+colors = PackedColorArray(0.54509807, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_grrij"]
+gradient = SubResource("Gradient_ef3v5")
+
+[sub_resource type="Curve" id="Curve_6r214"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2pgh4"]
+width = 500
+curve = SubResource("Curve_6r214")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wtc1a"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+initial_velocity_max = 347.52
+orbit_velocity_min = 0.0620001
+orbit_velocity_max = 1.0000001
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -1.0000023
+radial_accel_max = -2.2351742e-06
+scale_min = 5.0
+scale_max = 8.0
+scale_curve = SubResource("CurveTexture_2pgh4")
+color_ramp = SubResource("GradientTexture1D_grrij")
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.059999976
 
 [node name="Portal" type="Area2D"]
 collision_mask = 3
@@ -16,5 +47,11 @@ texture = ExtResource("2_grrij")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6r214")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 10
+position = Vector2(-22, 22)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_wtc1a")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
