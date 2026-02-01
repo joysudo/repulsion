@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc5m8qk5gqdgs"
-path="res://.godot/imported/purple_bg_4.png-ce771fcd0f32a73743152c89b7f8878f.ctex"
+uid="uid://rngfkwl7u7gb"
+path="res://.godot/imported/aero_2.png-c7f5b34989b52192bc735224e96e61aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/2/purple_bg_4.png"
-dest_files=["res://.godot/imported/purple_bg_4.png-ce771fcd0f32a73743152c89b7f8878f.ctex"]
+source_file="res://assets/backgrounds/5/aero_2.png"
+dest_files=["res://.godot/imported/aero_2.png-c7f5b34989b52192bc735224e96e61aa.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bh2knbs2xqy6b"]
+[gd_scene load_steps=21 format=3 uid="uid://bh2knbs2xqy6b"]
 
 [ext_resource type="Texture2D" uid="uid://bfpvtpdvln22i" path="res://menu/menu_bg.png" id="1_w44g7"]
 [ext_resource type="FontFile" uid="uid://4vtnx1ki0vd0" path="res://assets/fonts/LTSuperior-Light.ttf" id="2_0o4t1"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c6q0i1o7wlenf" path="res://entities/player/p2/p2neg.png" id="6_j5v2v"]
 [ext_resource type="Texture2D" uid="uid://04sri4f2heir" path="res://entities/player/p2/p2neu.png" id="7_iotk1"]
 [ext_resource type="Texture2D" uid="uid://mlrge1ml6nee" path="res://entities/player/p2/p2pos.png" id="8_w44g7"]
+[ext_resource type="FontFile" uid="uid://da6dwn8yx0gdd" path="res://assets/fonts/Tondu-Beta.ttf" id="14_w44g7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fu7sn"]
 
@@ -171,6 +172,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8u0te"]
 size = Vector2(1386, 81)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iotk1"]
+size = Vector2(276, 734)
+
 [node name="main_menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -269,6 +273,32 @@ position = Vector2(113, 216)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(543, 490)
 shape = SubResource("RectangleShape2D_8u0te")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(543, -242)
+shape = SubResource("RectangleShape2D_8u0te")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-239, 128)
+rotation = -3.1415925
+shape = SubResource("RectangleShape2D_iotk1")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1289, 125)
+rotation = -3.1415925
+shape = SubResource("RectangleShape2D_iotk1")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 177.0
+offset_right = 400.0
+offset_bottom = 340.0
+theme_override_fonts/font = ExtResource("14_w44g7")
+theme_override_font_sizes/font_size = 90
+text = "Oh My 
+Gatos."
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Panel/VBoxContainer/Button" to="Panel/VBoxContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Button2" to="Panel/VBoxContainer/Button2" method="_on_pressed"]

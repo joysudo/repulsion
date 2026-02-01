@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6wke5fpohu5f"
-path="res://.godot/imported/purple_bg_3.png-e3b19e566296d97f61af81e2c7177b37.ctex"
+uid="uid://dehk75etoq07n"
+path="res://.godot/imported/hecktiles (1).png-c95f4d2b0a2a6e8768b024edb0e34857.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/2/purple_bg_3.png"
-dest_files=["res://.godot/imported/purple_bg_3.png-e3b19e566296d97f61af81e2c7177b37.ctex"]
+source_file="res://assets/backgrounds/4/hecktiles (1).png"
+dest_files=["res://.godot/imported/hecktiles (1).png-c95f4d2b0a2a6e8768b024edb0e34857.ctex"]
 
 [params]
 
