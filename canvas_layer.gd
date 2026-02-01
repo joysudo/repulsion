@@ -1,12 +1,22 @@
 extends CanvasLayer
 
+@onready var coin_label: Label = $Label
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	var coins = get_tree().get_nodes_in_group("coin")
-	#var numcoins = get_parent().get_children()
-	$NumCoinsCollected.text = "0/" + str(coins.size())
-	# loop thru children to count number of coins in scene
+var coins_collected := 0
+var total_coins := 0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func when receive signal from coin idk do stiff
+func _ready():
+	var coins = get_tree().get_nodes_in_group("coins")
+	total_coins = coins.size()
+
+	for coin in coins:
+		coin.collected.connect(_on_coin_collected)
+
+	update_coin_label()
+
+func _on_coin_collected():
+	coins_collected += 1
+	update_coin_label()
+
+func update_coin_label():
+	coin_label.text = "Coins: %d / %d" % [coins_collected, total_coins]

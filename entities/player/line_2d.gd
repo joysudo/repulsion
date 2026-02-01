@@ -42,7 +42,7 @@ func calculate_magnetism():
 	# trying to add a min distance to denominator to stop force from exploding
 	var force
 	if p1.current_charge * p2.current_charge == 1: # repel
-		force = direction * force_strength * 10000 / (distance + MIN_DISTANCE) * clamp(1.0-(distance/MAX_DISTANCE), 0.0, 1.0)
+		force = direction * force_strength * 8000 / (distance + MIN_DISTANCE) * clamp(1.0-(distance/MAX_DISTANCE), 0.0, 1.0)
 		p1.external_velocity -= force
 		p2.external_velocity += force
 	else: # if == -1, attract

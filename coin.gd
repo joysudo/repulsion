@@ -1,12 +1,12 @@
 extends Area2D
 
+signal collected
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	add_to_group("coin")
-	pass # Replace with function body.
+func _ready():
+	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body):
+	print("Coin touched by:", body.name)
 	if body.is_in_group("player"):
-		emit_signal("coin_collected")
+		emit_signal("collected")
 		queue_free()
