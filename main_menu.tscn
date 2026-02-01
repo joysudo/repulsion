@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bh2knbs2xqy6b"]
+[gd_scene load_steps=20 format=3 uid="uid://bh2knbs2xqy6b"]
 
 [ext_resource type="FontFile" uid="uid://cuq8hcfyse7rh" path="res://assets/fonts/LTSuperior-Medium.ttf" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://bfpvtpdvln22i" path="res://menu/menu_bg.png" id="1_w44g7"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://b1ueak6by31kq" path="res://entities/player/p1/p1neu.png" id="4_0o4t1"]
 [ext_resource type="Texture2D" uid="uid://by0t3q2iim36l" path="res://entities/player/p1/p1pos.png" id="5_0k4wn"]
 [ext_resource type="Script" uid="uid://desc4uxeagm6x" path="res://menu/button_2.gd" id="5_j5v2v"]
-[ext_resource type="Script" uid="uid://xaxn0wcrvoke" path="res://menu/button_3.gd" id="6_iotk1"]
 [ext_resource type="Texture2D" uid="uid://c6q0i1o7wlenf" path="res://entities/player/p2/p2neg.png" id="6_j5v2v"]
 [ext_resource type="Texture2D" uid="uid://04sri4f2heir" path="res://entities/player/p2/p2neu.png" id="7_iotk1"]
 [ext_resource type="Texture2D" uid="uid://mlrge1ml6nee" path="res://entities/player/p2/p2pos.png" id="8_w44g7"]
@@ -22,8 +21,6 @@ default_font_size = 21
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fu7sn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qtwp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0o4t1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cm266"]
 animations = [{
@@ -223,15 +220,6 @@ theme_override_styles/hover = ExtResource("3_0o4t1")
 text = "level select"
 script = ExtResource("5_j5v2v")
 
-[node name="Button3" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_0o4t1")
-theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0o4t1")
-theme_override_styles/hover = ExtResource("3_0o4t1")
-text = "options"
-script = ExtResource("6_iotk1")
-
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
 layout_mode = 0
 offset_top = 183.0
@@ -284,7 +272,6 @@ shape = SubResource("RectangleShape2D_8u0te")
 
 [connection signal="pressed" from="Panel/VBoxContainer/Button" to="Panel/VBoxContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Button2" to="Panel/VBoxContainer/Button2" method="_on_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Button3" to="Panel/VBoxContainer/Button3" method="_on_pressed"]
 
 [editable path="Player1"]
 [editable path="Player2"]
