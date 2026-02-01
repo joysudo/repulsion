@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cl7emm4k7s72s"]
+[gd_scene format=3 uid="uid://diqrewhdq8dju"]
 
-[node name="level_select" type="Control"]
+[node name="options" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

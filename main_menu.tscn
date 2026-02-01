@@ -1,4 +1,181 @@
-[gd_scene load_steps=0 format=3 uid="uid://bh2knbs2xqy6b"]
+[gd_scene load_steps=21 format=3 uid="uid://bh2knbs2xqy6b"]
+
+[ext_resource type="FontFile" uid="uid://cuq8hcfyse7rh" path="res://assets/fonts/LTSuperior-Medium.ttf" id="1_06t4h"]
+[ext_resource type="FontFile" uid="uid://4vtnx1ki0vd0" path="res://assets/fonts/LTSuperior-Light.ttf" id="2_0o4t1"]
+[ext_resource type="PackedScene" uid="uid://g08seisd8imf" path="res://entities/player/player.tscn" id="2_8qtwp"]
+[ext_resource type="StyleBox" uid="uid://d20qdyea0roon" path="res://menu/menu_options_hover.tres" id="3_0o4t1"]
+[ext_resource type="Texture2D" uid="uid://v5ywbmanvxbg" path="res://entities/player/p1/p1neg.png" id="3_dy7ct"]
+[ext_resource type="Script" uid="uid://40tcibouqsm4" path="res://button.gd" id="4_0k4wn"]
+[ext_resource type="Texture2D" uid="uid://b1ueak6by31kq" path="res://entities/player/p1/p1neu.png" id="4_0o4t1"]
+[ext_resource type="Texture2D" uid="uid://by0t3q2iim36l" path="res://entities/player/p1/p1pos.png" id="5_0k4wn"]
+[ext_resource type="Script" uid="uid://desc4uxeagm6x" path="res://menu/button_2.gd" id="5_j5v2v"]
+[ext_resource type="Script" uid="uid://xaxn0wcrvoke" path="res://menu/button_3.gd" id="6_iotk1"]
+[ext_resource type="Texture2D" uid="uid://c6q0i1o7wlenf" path="res://entities/player/p2/p2neg.png" id="6_j5v2v"]
+[ext_resource type="Texture2D" uid="uid://04sri4f2heir" path="res://entities/player/p2/p2neu.png" id="7_iotk1"]
+[ext_resource type="Texture2D" uid="uid://mlrge1ml6nee" path="res://entities/player/p2/p2pos.png" id="8_w44g7"]
+
+[sub_resource type="Theme" id="Theme_7vrkn"]
+default_font = ExtResource("1_06t4h")
+default_font_size = 21
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fu7sn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qtwp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0o4t1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cm266"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dy7ct")
+}],
+"loop": true,
+"name": &"idle_neg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0o4t1")
+}],
+"loop": true,
+"name": &"idle_neu",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0k4wn")
+}],
+"loop": true,
+"name": &"idle_pos",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dy7ct")
+}],
+"loop": true,
+"name": &"jump_neg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0o4t1")
+}],
+"loop": true,
+"name": &"jump_neu",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0k4wn")
+}],
+"loop": true,
+"name": &"jump_pos",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dy7ct")
+}],
+"loop": true,
+"name": &"run_neg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0o4t1")
+}],
+"loop": true,
+"name": &"run_neu",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0k4wn")
+}],
+"loop": true,
+"name": &"run_pos",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8g3n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_j5v2v")
+}],
+"loop": true,
+"name": &"idle_neg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_iotk1")
+}],
+"loop": true,
+"name": &"idle_neu",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_w44g7")
+}],
+"loop": true,
+"name": &"idle_pos",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_j5v2v")
+}],
+"loop": true,
+"name": &"jump_neg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_iotk1")
+}],
+"loop": true,
+"name": &"jump_neu",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_w44g7")
+}],
+"loop": true,
+"name": &"jump_pos",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_j5v2v")
+}],
+"loop": true,
+"name": &"run_neg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_iotk1")
+}],
+"loop": true,
+"name": &"run_neu",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_w44g7")
+}],
+"loop": true,
+"name": &"run_pos",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8u0te"]
+size = Vector2(1386, 81)
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -7,3 +184,86 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme = SubResource("Theme_7vrkn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 327.0
+offset_right = 428.0
+offset_bottom = 532.0
+theme_override_constants/separation = 21
+alignment = 1
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0o4t1")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fu7sn")
+theme_override_styles/hover = ExtResource("3_0o4t1")
+text = "start new game"
+script = ExtResource("4_0k4wn")
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0o4t1")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8qtwp")
+theme_override_styles/hover = ExtResource("3_0o4t1")
+text = "level select"
+script = ExtResource("5_j5v2v")
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0o4t1")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0o4t1")
+theme_override_styles/hover = ExtResource("3_0o4t1")
+text = "options"
+script = ExtResource("6_iotk1")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 0
+offset_top = 183.0
+offset_right = 333.0
+offset_bottom = 183.0
+
+[node name="Player1" parent="." instance=ExtResource("2_8qtwp")]
+position = Vector2(777, 574)
+player_id = 1
+
+[node name="AnimatedSprite2D" parent="Player1" index="0"]
+position = Vector2(14, 59)
+sprite_frames = SubResource("SpriteFrames_cm266")
+animation = &"jump_neg"
+offset = Vector2(-70, -295)
+
+[node name="CollisionShape2D" parent="Player1" index="1"]
+position = Vector2(6, 3)
+
+[node name="Player2" parent="." instance=ExtResource("2_8qtwp")]
+position = Vector2(1038, 588)
+player_id = 2
+
+[node name="AnimatedSprite2D" parent="Player2" index="0"]
+sprite_frames = SubResource("SpriteFrames_g8g3n")
+animation = &"run_neu"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(113, 216)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(543, 490)
+shape = SubResource("RectangleShape2D_8u0te")
+
+[connection signal="pressed" from="Panel/VBoxContainer/Button" to="Panel/VBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button2" to="Panel/VBoxContainer/Button2" method="_on_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button3" to="Panel/VBoxContainer/Button3" method="_on_pressed"]
+
+[editable path="Player1"]
+[editable path="Player2"]
