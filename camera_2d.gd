@@ -17,7 +17,7 @@ func _ready() -> void:
 		var tile_size = tilemap.tile_set.tile_size
 		limit_left = map_rect.position.x * tile_size.x + 10
 		limit_right = map_rect.end.x * tile_size.x  - 10
-		limit_top = map_rect.position.y * tile_size.y + 10
+		limit_top = map_rect.position.y * tile_size.y - 60
 		limit_bottom = map_rect.end.y * tile_size.y - 10
 		offset = Vector2.ZERO
 

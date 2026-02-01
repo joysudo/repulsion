@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://ctut024uoybfc"]
+[gd_scene load_steps=8 format=4 uid="uid://ctut024uoybfc"]
 
 [ext_resource type="PackedScene" uid="uid://wdmusfh8lgs5" path="res://level.tscn" id="1_vn7o3"]
 [ext_resource type="PackedScene" uid="uid://d0c7w8v00mld0" path="res://coin.tscn" id="2_jirdo"]
+[ext_resource type="Texture2D" uid="uid://bkp4ftlv35xdp" path="res://assets/backgrounds/1/purple_block1.png" id="2_n46q3"]
 [ext_resource type="Theme" uid="uid://cwwf7i7gvq5bq" path="res://menu_theme.tres" id="3_bt44k"]
 [ext_resource type="FontFile" uid="uid://da6dwn8yx0gdd" path="res://assets/fonts/Tondu-Beta.ttf" id="4_kx6l7"]
 
@@ -24,56 +25,60 @@ position = Vector2(397, 597)
 [node name="TileMapLayer" parent="." index="5"]
 tile_map_data = PackedByteArray("AAAAABUAAAAAAAAAAAABABUAAAAAAAAAAAACABUAAAAAAAAAAAADABUAAAAAAAAAAAAEABUAAAAAAAAAAAAFABUAAAAAAAAAAAAGABUAAAAAAAAAAAAHABUAAAAAAAAAAAAIABUAAAAAAAAAAAAJABUAAAAAAAAAAAAKABUAAAAAAAAAAAALABUAAAAAAAAAAAAMABUAAAAAAAAAAAANABUAAAAAAAAAAAAOABUAAAAAAAAAAAAPABUAAAAAAAAAAAAQABUAAAAAAAAAAAARABUAAAAAAAAAAAASABUAAAAAAAAAAAATABUAAAAAAAAAAAAUABUAAAAAAAAAAAAVABUAAAAAAAAAAAAWABUAAAAAAAAAAAAXABUAAAAAAAAAAAAYABUAAAAAAAAAAAAZABUAAAAAAAAAAAAaABUAAAAAAAAAAAAbABUAAAAAAAAAAAAcABUAAAAAAAAAAAAdABUAAAAAAAAAAAAeABUAAAAAAAAAAAAfABUAAAAAAAAAAAAgABUAAAAAAAAAAAAhABUAAAAAAAAAAAAiABUAAAAAAAAAAAAjABUAAAAAAAAAAAAkABUAAAAAAAAAAAAlABUAAAAAAAAAAAAmABUAAAAAAAAAAAAnABUAAAAAAAAAAAD/////AAAAAAAAAAAoABUAAAAAAAAAAAApABUAAAAAAAAAAAAqABUAAAAAAAAAAAArABUAAAAAAAAAAAAsABUAAAAAAAAAAAAtABUAAAAAAAAAAAAuABUAAAAAAAAAAAAvABUAAAAAAAAAAAAwABUAAAAAAAAAAAAxABUAAAAAAAAAAAAyABUAAAAAAAAAAAAzABUAAAAAAAAAAAA0ABUAAAAAAAAAAAA1ABUAAAAAAAAAAAA2ABUAAAAAAAAAAAA3ABUAAAAAAAAAAAA4ABUAAAAAAAAAAAA5ABUAAAAAAAAAAAA6ABUAAAAAAAAAAAA7ABUAAAAAAAAAAAA8ABUAAAAAAAAAAAA9ABUAAAAAAAAAAAA+ABUAAAAAAAAAAAA/ABUAAAAAAAAAAABAABUAAAAAAAAAAABBABUAAAAAAAAAAABCABUAAAAAAAAAAABDABUAAAAAAAAAAABEABUAAAAAAAAAAABFABUAAAAAAAAAAABGABUAAAAAAAAAAABHABUAAAAAAAAAAABIABUAAAAAAAAAAABJABUAAAAAAAAAAABKABUAAAAAAAAAAABLABUAAAAAAAAAAABMABUAAAAAAAAAAABNABUAAAAAAAAAAAA=")
 
-[node name="CanvasLayer" parent="." index="9"]
+[node name="Sprite2D" type="Sprite2D" parent="." index="6"]
+position = Vector2(989, 913)
+texture = ExtResource("2_n46q3")
+
+[node name="CanvasLayer" parent="." index="10"]
 offset = Vector2(75, 0)
 transform = Transform2D(1, 0, 0, 1, 75, 0)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="12"]
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="13"]
 position = Vector2(614, 185)
 scale = Vector2(3.2000005, 3.2000005)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 shape = SubResource("WorldBoundaryShape2D_vn7o3")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." index="13"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="14"]
 position = Vector2(91, 185)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
 position = Vector2(-94.5, 258.5)
 shape = SubResource("RectangleShape2D_jirdo")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="." index="14"]
+[node name="StaticBody2D3" type="StaticBody2D" parent="." index="15"]
 position = Vector2(725, 194)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" index="0"]
 position = Vector2(1870, 259)
 shape = SubResource("RectangleShape2D_jirdo")
 
-[node name="Coin2" parent="." index="15" groups=["coins"] instance=ExtResource("2_jirdo")]
+[node name="Coin2" parent="." index="16" groups=["coins"] instance=ExtResource("2_jirdo")]
 position = Vector2(666, 208)
 
-[node name="Coin3" parent="." index="16" groups=["coins"] instance=ExtResource("2_jirdo")]
+[node name="Coin3" parent="." index="17" groups=["coins"] instance=ExtResource("2_jirdo")]
 position = Vector2(877, 508)
 
-[node name="Coin4" parent="." index="17" groups=["coins"] instance=ExtResource("2_jirdo")]
+[node name="Coin4" parent="." index="18" groups=["coins"] instance=ExtResource("2_jirdo")]
 position = Vector2(1110, 194)
 
-[node name="Coin5" parent="." index="18" groups=["coins"] instance=ExtResource("2_jirdo")]
+[node name="Coin5" parent="." index="19" groups=["coins"] instance=ExtResource("2_jirdo")]
 position = Vector2(1310, 502)
 
-[node name="Coin6" parent="." index="19" groups=["coins"] instance=ExtResource("2_jirdo")]
+[node name="Coin6" parent="." index="20" groups=["coins"] instance=ExtResource("2_jirdo")]
 position = Vector2(1544, 209)
 
-[node name="Coin7" parent="." index="20" groups=["coins"] instance=ExtResource("2_jirdo")]
+[node name="Coin7" parent="." index="21" groups=["coins"] instance=ExtResource("2_jirdo")]
 position = Vector2(1726, 488)
 
-[node name="Coin8" parent="." index="21" groups=["coins"] instance=ExtResource("2_jirdo")]
+[node name="Coin8" parent="." index="22" groups=["coins"] instance=ExtResource("2_jirdo")]
 position = Vector2(1949, 177)
 
-[node name="Coin9" parent="." index="22" groups=["coins"] instance=ExtResource("2_jirdo")]
+[node name="Coin9" parent="." index="23" groups=["coins"] instance=ExtResource("2_jirdo")]
 position = Vector2(2088, 458)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." index="23"]
+[node name="RichTextLabel" type="RichTextLabel" parent="." index="24"]
 offset_left = 182.0
 offset_top = 287.0
 offset_right = 458.0
@@ -83,7 +88,7 @@ theme_override_font_sizes/normal_font_size = 26
 text = "opposite charges attract, same charges repel"
 fit_content = true
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="." index="24"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="." index="25"]
 offset_left = 190.0
 offset_top = 390.0
 offset_right = 541.0

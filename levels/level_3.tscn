@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=4 uid="uid://digdsx538fglt"]
+[gd_scene load_steps=25 format=4 uid="uid://digdsx538fglt"]
 
+[ext_resource type="Texture2D" uid="uid://dhy0djyldhj13" path="res://assets/backgrounds/3/rocks (2).png" id="1_u4kh1"]
 [ext_resource type="Texture2D" uid="uid://c71d1t04aulbx" path="res://assets/tilesets/2026_01_31_0n1_Kleki.png" id="1_wi0qq"]
 [ext_resource type="PackedScene" uid="uid://d0c7w8v00mld0" path="res://coin.tscn" id="2_hldmh"]
 [ext_resource type="Texture2D" uid="uid://xpxrpomrinxd" path="res://assets/tilesets/tilemap.jpg" id="2_s3q8p"]
@@ -14,6 +15,8 @@
 [ext_resource type="PackedScene" path="res://coin_counter_canvas.tscn" id="12_8swdu"]
 [ext_resource type="PackedScene" uid="uid://bqryg3i0cyyd4" path="res://portal.tscn" id="13_xe1ru"]
 [ext_resource type="PackedScene" uid="uid://cj1qpffk6blds" path="res://camera_2d.tscn" id="14_6anhs"]
+[ext_resource type="Texture2D" uid="uid://c2ohopnsta2gf" path="res://assets/backgrounds/3/rocks (3).png" id="16_svivd"]
+[ext_resource type="Texture2D" uid="uid://bqf0gtlo7hjeg" path="res://assets/backgrounds/3/rocks (4).png" id="17_yafm2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukwr8"]
 texture = ExtResource("1_wi0qq")
@@ -198,7 +201,16 @@ size = Vector2(59, 919)
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(918.00006, 330)
+scale = Vector2(1.1369958, 1.1369958)
+texture = ExtResource("1_u4kh1")
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+visible = false
 tile_map_data = PackedByteArray("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")
 tile_set = SubResource("TileSet_vonw3")
 
@@ -248,7 +260,7 @@ shape = SubResource("RectangleShape2D_jq78i")
 position = Vector2(63, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(1870, 259)
+position = Vector2(1870, 267)
 shape = SubResource("RectangleShape2D_jq78i")
 
 [node name="Coin" parent="." groups=["coins"] instance=ExtResource("2_hldmh")]
@@ -280,6 +292,27 @@ position = Vector2(1718, 556)
 next_level_path = "uid://b8p2raa8rna62"
 
 [node name="Camera2D" parent="." instance=ExtResource("14_6anhs")]
+
+[node name="Rocks(3)" type="Sprite2D" parent="."]
+position = Vector2(921.3959, 306.37503)
+scale = Vector2(1.0546253, 1.0546252)
+texture = ExtResource("16_svivd")
+
+[node name="Rocks(4)" type="Sprite2D" parent="."]
+position = Vector2(922.25, 710.25)
+scale = Vector2(1.0517938, 1.2272727)
+texture = ExtResource("17_yafm2")
+
+[node name="Rocks(4)2" type="Sprite2D" parent="."]
+position = Vector2(-70.75001, 630.25)
+scale = Vector2(0.048256684, 1.2272727)
+texture = ExtResource("17_yafm2")
+
+[node name="Rocks(4)3" type="Sprite2D" parent="."]
+position = Vector2(1925.9501, 629.00006)
+rotation = 1.5707964
+scale = Vector2(0.048256684, 0.8728278)
+texture = ExtResource("17_yafm2")
 
 [editable path="Player1"]
 [editable path="Player2"]
